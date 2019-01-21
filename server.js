@@ -12,6 +12,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static('views'));
 app.use('/google',router);
+app.get('/',(req,res)=>{
+    res.sendFile(__dirname+'/views/home.html');
+})
 app.get('/gettingdata/:email',(req,res)=>{
     database_google.findOne({email:req.params.email}).then(user=>{
         res.status(200).json(user);
