@@ -65,7 +65,7 @@ const send=(user)=>{
 
 
 
-cron.schedule('0 0 */6 * * *',()=>{
+cron.schedule('0 0 */5 * * *',()=>{
     var samay=datetime.create().format('Y-m-d H:M');
     const time=samay.split(' ')[1];
     console.log(samay)
