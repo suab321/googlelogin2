@@ -1,4 +1,4 @@
-const session=require('express-session');
+const session=require('cookie-session');
 const express=require('express');
 const app=express();
 const {router}=require('./oauth-google/route');
@@ -14,7 +14,7 @@ const datetime=require('node-datetime');
 const axios=require('axios');
 
 
-app.use(session({key:'user_sid',secret:"suab321",resave:false,saveUninitialized:false,cookie:{maxAge:1000*60*60*12}}))
+app.use(session({key:'user_sid',secret:"suab321",resave:false,saveUninitialized:false,cookie:{maxAge:1000*60*60}}))
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static('views'));
