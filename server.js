@@ -72,9 +72,10 @@ cron.schedule('*/5 * * * * *',()=>{
     const date=samay.split(' ')[0];
     axios.get('https://glacial-citadel-47306.herokuapp.com/api/Appointments').then(res=>{
         if(res.status===200){
-            console.log(res.data)
+            //console.log(res.data)
             res.data.map(i=>{
                 if(i.Date===date && i.Time>time){
+                    console.log(i);
                     send(i);
                 }
             })
