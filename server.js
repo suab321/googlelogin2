@@ -40,7 +40,7 @@ const send=(user)=>{
         from:'foreignadmitsweb@gmail.com',
         to:user.m_email,
         subject:'Foreign Admits meeting with your mentor',
-        text:'Hello '+user.m_name+' you have an upcoming meeting with your mentor '+ user.s_name +'at' +user.time
+        text:'Hello '+user.m_name+' you have an upcoming meeting with your mentor '+ user.s_name +'at' +user.Time
     }
     transporter.sendMail(mailoption1,(err,res)=>{
         if(err)
@@ -53,7 +53,7 @@ const send=(user)=>{
         from:'foreignadmitsweb@gmail.com',
         to:user.s_email,
         subject:'Foreign Admits meeting with your mentor',
-        text:'Hello '+user.s_name+' you have an upcoming meeting with your mentor '+ user.m_name +'at' +user.time
+        text:'Hello '+user.s_name+' you have an upcoming meeting with your mentor '+ user.m_name +' at ' +user.Time
     }
     transporter.sendMail(mailoption2,(err,res)=>{
         if(err)
