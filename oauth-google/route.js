@@ -11,7 +11,7 @@ router.get('/login',
 )
 router.get('/google_redirect',passport.authenticate('google',{failureRedirect:'http://localhost:4200/login/student'}),(req,res)=>{
     console.log("my session"+req.user);
-    res.redirect(`https://fadmits.herokuapp.com/googlelogin/${req.user.email}/${req.user.name}/${req.user._id}`);
+    res.redirect(`https://calm-waters-42554.herokuapp.com/googlelogin/${req.user.email}/${req.user.name}/${req.user._id}`);
 })
 
 module.exports={router};
